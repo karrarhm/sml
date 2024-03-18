@@ -1,0 +1,946 @@
+@prefix base:    <https://w3id.org/def/basicsemantics-owl#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix lbm:     <http://www.laces.tech/publication/ns/semmtech/live/laces/schema/blueprint-manager/> .
+@prefix ldoc:    <http://www.laces.tech/publication/ns/semmtech/live/laces/schema/document-extractions/> .
+@prefix lkos:    <http://www.laces.tech/publication/ns/semmtech/live/laces/schema/kos/> .
+@prefix ls:      <http://www.laces.tech/publication/ns/semmtech/live/laces/schema/shapes/> .
+@prefix lspec:   <http://www.laces.tech/publication/ns/semmtech/live/laces/schema/specifications/> .
+@prefix otl:     <http://www.laces.tech/publication/ns/semmtech/live/laces/schema/otl-manager/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl:  <http://www.w3.org/2008/05/skos-xl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-4>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/7c1f406b-ba1d-4a7a-b62a-1b07f96461b2> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-5> .
+
+<https://w3id.org/nen2660/def#Activity>
+        rdf:type        owl:Class ;
+        skos:prefLabel  "activiteit"@nl , "activity"@en .
+
+<https://www.trafikverket.se/ontologi/trvotl/8c07a33e-053d-4121-ba48-ebca965d60c9>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://www.trafikverket.se/ontologi/trvotl/ced1b738-8212-4e22-a185-2bb305fe94bb> ;
+        rdfs:subClassOf  [ rdf:type            owl:Restriction ;
+                           owl:minCardinality  0 ;
+                           owl:onClass         <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa> ;
+                           owl:onProperty      <https://www.trafikverket.se/ontologi/trvotl/a82321b2-99a5-4eae-bec8-65e600f3916f>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/f17c1bd2-851a-4519-8823-0dee9f86ea2b> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#isConnectedTo>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type            owl:Restriction ;
+                           owl:minCardinality  0 ;
+                           owl:onProperty      <https://www.trafikverket.se/ontologi/trvotl/6b6a5195-f43d-4e8b-afb0-ec200cefb556>
+                         ] ;
+        skos:altLabel    "Signal-RTU"@sv ;
+        skos:prefLabel   "RTU Koncentrator"@sv ;
+        <https://www.trafikverket.se/ontologi/trvotl/dabe5ddcf9aa7f6d099631cd5e479cf2>
+                "KEBAD" .
+
+<https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-8>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/c2809720-8a96-468c-8c89-b1bf74e0bbb6> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-9> .
+
+<https://www.trafikverket.se/ontologi/trvotl/98b2b455-eca0-47d8-8f2c-18812a468b2b>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://w3id.org/nen2660/def#RealObject> ;
+        rdfs:subClassOf  [ rdf:type            owl:Restriction ;
+                           owl:minCardinality  0 ;
+                           owl:onProperty      <https://www.trafikverket.se/ontologi/trvotl/5646d42d-fad5-42ed-ba95-398e33e8faa6>
+                         ] ;
+        skos:prefLabel   "Tekniskt system"@sv .
+
+<https://www.trafikverket.se/ontologi/trvotl/0a677b794a0152c61a4b798ff94e322d>
+        rdf:type        owl:AnnotationProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "SÄK" .
+
+<https://www.trafikverket.se/ontologi/trvotl/97a112de-a7c6-32f5-96d6-8841b3a63103>
+        rdf:type        sh:NodeShape ;
+        sh:property     [ sh:datatype  xsd:string ;
+                          sh:maxCount  1 ;
+                          sh:minCount  0 ;
+                          sh:path      <https://www.trafikverket.se/ontologi/trvotl/5646d42d-fad5-42ed-ba95-398e33e8faa6>
+                        ] ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#hasPart> ;
+                          sh:qualifiedMinCount    0 ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/0be5f30c-a84b-478c-891f-7bf10baa7dca> ]
+                        ] ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#hasPart> ;
+                          sh:qualifiedMinCount    0 ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/2ecb3cff-ba00-47f4-9838-f90b761ddb1d> ]
+                        ] ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#hasPart> ;
+                          sh:qualifiedMinCount    0 ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/71d83e5a-db9b-4ef9-aeb9-74eb972fbc76> ]
+                        ] ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#hasPart> ;
+                          sh:qualifiedMinCount    0 ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/b7a27fbe-dee4-4aaf-a030-7bb75148f84a> ]
+                        ] ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#hasPart> ;
+                          sh:qualifiedMinCount    0 ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/8c07a33e-053d-4121-ba48-ebca965d60c9> ]
+                        ] ;
+        sh:targetClass  <https://www.trafikverket.se/ontologi/trvotl/7bf560ff-b1a7-44f7-8651-38c1f637ebf3> .
+
+<https://www.trafikverket.se/ontologi/trvotl/12da6079-2bda-475a-922d-8cebc908cdd4>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://w3id.org/nen2660/def#SpatialRegion> ;
+        skos:prefLabel   "Tillgångsplacering"@sv .
+
+<https://w3id.org/nen2660/def#Matter>
+        rdf:type        owl:Class ;
+        skos:prefLabel  "matter"@en , "materie"@nl .
+
+<https://w3id.org/nen2660/def#SpatialRegion>
+        rdf:type        owl:Class ;
+        skos:prefLabel  "Ruimtelijk gebied"@nl , "Spatial region"@en .
+
+<https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637>
+        rdf:type         owl:Class , sh:NodeShape ;
+        rdfs:subClassOf  <https://w3id.org/nen2660/def#EnumerationType> ;
+        owl:oneOf        <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-0> ;
+        skos:prefLabel   "ModellbeteckningEl-RTU" ;
+        sh:in            <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-0> .
+
+<https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-3>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/6c739257-607f-42c6-b93b-1e318c5f7ad7> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-4> .
+
+<https://www.trafikverket.se/ontologi/trvotl/c2809720-8a96-468c-8c89-b1bf74e0bbb6>
+        rdf:type         <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637> , <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa> ;
+        skos:definition  "" ;
+        skos:prefLabel   "RTU400" .
+
+<https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-7>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/be12bbec-2833-44da-8264-d1e49b4a5774> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-8> .
+
+<https://www.trafikverket.se/ontologi/trvotl/25401143-a057-4ef1-8dc4-d5e6031e7eac>
+        rdf:type         <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637> , <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa> ;
+        skos:definition  "" ;
+        skos:prefLabel   "SICAM mic" .
+
+<https://www.trafikverket.se/ontologi/trvotl/aae51600-c5c3-45c5-ac46-2510fce63340>
+        rdf:type         owl:Class , sh:NodeShape ;
+        rdfs:subClassOf  <https://w3id.org/nen2660/def#EnumerationType> ;
+        owl:oneOf        <https://www.trafikverket.se/ontologi/trvotl/aae51600-c5c3-45c5-ac46-2510fce63340-list-0> ;
+        skos:prefLabel   "ModellbeteckningPLC" ;
+        sh:in            <https://www.trafikverket.se/ontologi/trvotl/aae51600-c5c3-45c5-ac46-2510fce63340-list-0> .
+
+<https://www.trafikverket.se/ontologi/trvotl/37ea92ac-445c-4a90-9341-9f141be1b27f-Shape>
+        rdf:type        sh:NodeShape ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#contains> ;
+                          sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/2ecb3cff-ba00-47f4-9838-f90b761ddb1d> ]
+                        ] ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#contains> ;
+                          sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/71d83e5a-db9b-4ef9-aeb9-74eb972fbc76> ]
+                        ] ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#contains> ;
+                          sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/0be5f30c-a84b-478c-891f-7bf10baa7dca> ]
+                        ] ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#contains> ;
+                          sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/b7a27fbe-dee4-4aaf-a030-7bb75148f84a> ]
+                        ] ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#contains> ;
+                          sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/7bf560ff-b1a7-44f7-8651-38c1f637ebf3> ]
+                        ] ;
+        sh:targetClass  <https://www.trafikverket.se/ontologi/trvotl/37ea92ac-445c-4a90-9341-9f141be1b27f> .
+
+<https://www.trafikverket.se/ontologi/trvotl/1de790d9810207e5931c3f3c94607c44>
+        rdf:type        owl:AnnotationProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "Systemkod" .
+
+<https://www.trafikverket.se/ontologi/trvotl/38d227f738444ece53da5d3269e9636a>
+        rdf:type        owl:AnnotationProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "Förvaltningssystem (metod)" .
+
+<https://www.trafikverket.se/ontologi/trvotl/aae51600-c5c3-45c5-ac46-2510fce63340-list-2>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/ffa75235-294c-4548-9627-fda2c88bb635> ;
+        rdf:rest   () .
+
+<https://w3id.org/nen2660/def#State>
+        rdf:type        owl:Class ;
+        skos:prefLabel  "toestand"@nl , "state"@en .
+
+<https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-2>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/5422b2df-6664-4457-acdd-1e1a9bfe1ddd> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-3> .
+
+<https://w3id.org/nen2660/def#Event>
+        rdf:type        owl:Class ;
+        skos:prefLabel  "gebeurtenis"@nl , "event"@en .
+
+<https://www.trafikverket.se/ontologi/trvotl/6ca5d62c-552e-46a2-8dd7-26ee9db11414>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://www.trafikverket.se/ontologi/trvotl/ced1b738-8212-4e22-a185-2bb305fe94bb> ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/f17c1bd2-851a-4519-8823-0dee9f86ea2b> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#isConnectedTo>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type            owl:Restriction ;
+                           owl:minCardinality  0 ;
+                           owl:onProperty      <https://www.trafikverket.se/ontologi/trvotl/6b6a5195-f43d-4e8b-afb0-ec200cefb556>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type            owl:Restriction ;
+                           owl:minCardinality  0 ;
+                           owl:onClass         <https://www.trafikverket.se/ontologi/trvotl/aae51600-c5c3-45c5-ac46-2510fce63340> ;
+                           owl:onProperty      <https://www.trafikverket.se/ontologi/trvotl/a82321b2-99a5-4eae-bec8-65e600f3916f>
+                         ] ;
+        skos:altLabel    "Programmable Logic Controller"@en ;
+        skos:prefLabel   "PLC"@en ;
+        <https://www.trafikverket.se/ontologi/trvotl/dabe5ddcf9aa7f6d099631cd5e479cf2>
+                "KEBAB" .
+
+<https://www.trafikverket.se/ontologi/trvotl/Function>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://w3id.org/nen2660/def#Activity> ;
+        skos:prefLabel   "function"@en , "functie"@nl .
+
+<https://www.trafikverket.se/ontologi/trvotl/6c739257-607f-42c6-b93b-1e318c5f7ad7>
+        rdf:type         <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637> , <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa> ;
+        skos:definition  "" ;
+        skos:prefLabel   "RTU210" .
+
+<https://www.trafikverket.se/ontologi/trvotl/53515210-88a1-31a5-85bf-8b0bd7c415e8>
+        rdf:type        sh:NodeShape ;
+        sh:property     [ sh:datatype  xsd:string ;
+                          sh:maxCount  1 ;
+                          sh:minCount  0 ;
+                          sh:path      <https://www.trafikverket.se/ontologi/trvotl/5646d42d-fad5-42ed-ba95-398e33e8faa6>
+                        ] ;
+        sh:targetClass  <https://www.trafikverket.se/ontologi/trvotl/d7ca36a8-cb1b-4cb3-9953-0cd4604d0cfc> .
+
+<https://www.trafikverket.se/ontologi/trvotl/7a5bd4e7-6466-4ba0-8334-3ea489b3c3d5>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://w3id.org/nen2660/def#RealObject> ;
+        rdfs:subClassOf  [ rdf:type            owl:Restriction ;
+                           owl:minCardinality  0 ;
+                           owl:onProperty      <https://www.trafikverket.se/ontologi/trvotl/6b6a5195-f43d-4e8b-afb0-ec200cefb556>
+                         ] ;
+        skos:prefLabel   "Komponent"@sv .
+
+<https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-6>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/bbd40550-9f84-48dc-a9a8-135448bee618> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-7> .
+
+<https://www.trafikverket.se/ontologi/trvotl/d7ca36a8-cb1b-4cb3-9953-0cd4604d0cfc>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://www.trafikverket.se/ontologi/trvotl/98b2b455-eca0-47d8-8f2c-18812a468b2b> ;
+        rdfs:subClassOf  [ rdf:type            owl:Restriction ;
+                           owl:minCardinality  0 ;
+                           owl:onProperty      <https://www.trafikverket.se/ontologi/trvotl/5646d42d-fad5-42ed-ba95-398e33e8faa6>
+                         ] ;
+        skos:prefLabel   "Broöverbyggnad" .
+
+<https://www.trafikverket.se/ontologi/trvotl/5422b2df-6664-4457-acdd-1e1a9bfe1ddd>
+        rdf:type         <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637> , <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa> ;
+        skos:definition  "" ;
+        skos:prefLabel   "SICAM A8000, CP-8050" .
+
+<https://www.trafikverket.se/ontologi/trvotl/a85cc4cb-f12c-3495-a10e-3c7c669f7141>
+        rdf:type        sh:NodeShape ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#hasPart> ;
+                          sh:qualifiedMinCount    1 ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/35eaf444-9a48-4753-8abd-4167bdcc98c3> ]
+                        ] ;
+        sh:property     [ sh:datatype  xsd:string ;
+                          sh:maxCount  1 ;
+                          sh:minCount  0 ;
+                          sh:path      <https://www.trafikverket.se/ontologi/trvotl/5646d42d-fad5-42ed-ba95-398e33e8faa6>
+                        ] ;
+        sh:targetClass  <https://www.trafikverket.se/ontologi/trvotl/0be5f30c-a84b-478c-891f-7bf10baa7dca> .
+
+<https://www.trafikverket.se/ontologi/trvotl/a4eaf0890d79a8f238e10a003d0035e6>
+        rdf:type        owl:AnnotationProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "Förvaltningsansvarig" .
+
+<https://www.trafikverket.se/ontologi/trvotl/6b6a5195-f43d-4e8b-afb0-ec200cefb556>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:range          rdfs:Resource ;
+        rdfs:subPropertyOf  <https://www.trafikverket.se/ontologi/trvotl/682ba86d-c1d3-4377-96ac-0deee4003ae3> ;
+        skos:definition     "Anläggningsobjektets huvudidentitet (utökat ReferensID). Trafikverkets referensbeteckning som är en unik identitet för ett anläggningsobjekt bestående av lokaliserings- och funktionsaspekt."@sv ;
+        skos:prefLabel      "KomponentID" ;
+        <https://www.trafikverket.se/ontologi/trvotl/0a677b794a0152c61a4b798ff94e322d>
+                "1" ;
+        <https://www.trafikverket.se/ontologi/trvotl/823df82d3e47debcf6ff0dfaab2561cc>
+                "J.382+A.A.S00=RAD.QS157-MBB02" .
+
+<https://www.trafikverket.se/ontologi/trvotl/23b58931-e1fa-48c5-8961-09194e4abf4b>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://www.trafikverket.se/ontologi/trvotl/1da1ba7c-5a63-4957-9d09-4384c487a84d> ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/0be5f30c-a84b-478c-891f-7bf10baa7dca> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#contains>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/7bf560ff-b1a7-44f7-8651-38c1f637ebf3> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#contains>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/2ecb3cff-ba00-47f4-9838-f90b761ddb1d> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#contains>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/b7a27fbe-dee4-4aaf-a030-7bb75148f84a> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#contains>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/71d83e5a-db9b-4ef9-aeb9-74eb972fbc76> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#contains>
+                         ] ;
+        skos:definition  "Utrymme för elrum, ställverk, omformare, transformatore, sektionerings-, fördelning- och nätstation, kopplingscentral, fristående utv. betjänad el-kiosk"@sv ;
+        skos:prefLabel   "El-teknikutrymmen"@sv ;
+        <https://www.trafikverket.se/ontologi/trvotl/a3a43f28ed55f98a9e185958603111bd>
+                "E" .
+
+<https://www.trafikverket.se/ontologi/trvotl/35eaf444-9a48-4753-8abd-4167bdcc98c3>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://www.trafikverket.se/ontologi/trvotl/ced1b738-8212-4e22-a185-2bb305fe94bb> ;
+        rdfs:subClassOf  [ rdf:type            owl:Restriction ;
+                           owl:minCardinality  0 ;
+                           owl:onClass         <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637> ;
+                           owl:onProperty      <https://www.trafikverket.se/ontologi/trvotl/a82321b2-99a5-4eae-bec8-65e600f3916f>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/f17c1bd2-851a-4519-8823-0dee9f86ea2b> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#isConnectedTo>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type            owl:Restriction ;
+                           owl:minCardinality  0 ;
+                           owl:onProperty      <https://www.trafikverket.se/ontologi/trvotl/6b6a5195-f43d-4e8b-afb0-ec200cefb556>
+                         ] ;
+        skos:altLabel    "El-RTU"@sv , "Remote terminal unit"@en ;
+        skos:prefLabel   "RTU"@en ;
+        <https://www.trafikverket.se/ontologi/trvotl/dabe5ddcf9aa7f6d099631cd5e479cf2>
+                "KEBAC" .
+
+<https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-1>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/28fd702e-6bde-4577-a63c-1ec0a550f2e5> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-2> .
+
+<https://www.trafikverket.se/ontologi/trvotl/File>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://w3id.org/nen2660/def#InformationObject> ;
+        skos:prefLabel   "file"@nl , "file"@en .
+
+<https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-5>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/7dc5128a-f0cf-40f7-a7e1-5ec5738c8adf> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-6> .
+
+<https://www.trafikverket.se/ontologi/trvotl/00eaadf4-4ec5-3216-8522-d11350230374>
+        rdf:type        sh:NodeShape ;
+        sh:property     [ sh:class     <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa> ;
+                          sh:maxCount  1 ;
+                          sh:minCount  0 ;
+                          sh:path      <https://www.trafikverket.se/ontologi/trvotl/a82321b2-99a5-4eae-bec8-65e600f3916f>
+                        ] ;
+        sh:property     [ sh:datatype  xsd:string ;
+                          sh:maxCount  1 ;
+                          sh:minCount  0 ;
+                          sh:path      <https://www.trafikverket.se/ontologi/trvotl/6b6a5195-f43d-4e8b-afb0-ec200cefb556>
+                        ] ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#isConnectedTo> ;
+                          sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/f17c1bd2-851a-4519-8823-0dee9f86ea2b> ]
+                        ] ;
+        sh:targetClass  <https://www.trafikverket.se/ontologi/trvotl/8c07a33e-053d-4121-ba48-ebca965d60c9> .
+
+<https://www.trafikverket.se/ontologi/trvotl/b7a27fbe-dee4-4aaf-a030-7bb75148f84a>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://www.trafikverket.se/ontologi/trvotl/98b2b455-eca0-47d8-8f2c-18812a468b2b> ;
+        rdfs:subClassOf  [ rdf:type            owl:Restriction ;
+                           owl:minCardinality  0 ;
+                           owl:onProperty      <https://www.trafikverket.se/ontologi/trvotl/5646d42d-fad5-42ed-ba95-398e33e8faa6>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/35eaf444-9a48-4753-8abd-4167bdcc98c3> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#hasPart>
+                         ] ;
+        skos:prefLabel   "Redundant styrsystem i segmentsövergripande nivå "@sv ;
+        <https://www.trafikverket.se/ontologi/trvotl/1de790d9810207e5931c3f3c94607c44>
+                "LCCC" .
+
+<https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-9>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/ea378b8f-99ae-44b1-8e33-08343dc28db6> ;
+        rdf:rest   () .
+
+<https://www.trafikverket.se/ontologi/trvotl/da32c885dc25a772bf69298eed07bc0b>
+        rdf:type        owl:AnnotationProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "Syftet med Attribut" .
+
+<https://www.trafikverket.se/ontologi/trvotl/17698dbc-692b-3f7b-b328-47a27cf35ded>
+        rdf:type        sh:NodeShape ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#hasPart> ;
+                          sh:qualifiedMinCount    1 ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/35eaf444-9a48-4753-8abd-4167bdcc98c3> ]
+                        ] ;
+        sh:property     [ sh:datatype  xsd:string ;
+                          sh:maxCount  1 ;
+                          sh:minCount  0 ;
+                          sh:path      <https://www.trafikverket.se/ontologi/trvotl/5646d42d-fad5-42ed-ba95-398e33e8faa6>
+                        ] ;
+        sh:targetClass  <https://www.trafikverket.se/ontologi/trvotl/b7a27fbe-dee4-4aaf-a030-7bb75148f84a> .
+
+<https://www.trafikverket.se/ontologi/trvotl/fa882055-7727-3d26-869f-e21da86092e4>
+        rdf:type        sh:NodeShape ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#isConnectedTo> ;
+                          sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/f17c1bd2-851a-4519-8823-0dee9f86ea2b> ]
+                        ] ;
+        sh:property     [ sh:class     <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637> ;
+                          sh:maxCount  1 ;
+                          sh:minCount  0 ;
+                          sh:path      <https://www.trafikverket.se/ontologi/trvotl/a82321b2-99a5-4eae-bec8-65e600f3916f>
+                        ] ;
+        sh:property     [ sh:datatype  xsd:string ;
+                          sh:maxCount  1 ;
+                          sh:minCount  0 ;
+                          sh:path      <https://www.trafikverket.se/ontologi/trvotl/6b6a5195-f43d-4e8b-afb0-ec200cefb556>
+                        ] ;
+        sh:targetClass  <https://www.trafikverket.se/ontologi/trvotl/35eaf444-9a48-4753-8abd-4167bdcc98c3> .
+
+<https://www.trafikverket.se/ontologi/trvotl/0be5f30c-a84b-478c-891f-7bf10baa7dca>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://www.trafikverket.se/ontologi/trvotl/98b2b455-eca0-47d8-8f2c-18812a468b2b> ;
+        rdfs:subClassOf  [ rdf:type            owl:Restriction ;
+                           owl:minCardinality  0 ;
+                           owl:onProperty      <https://www.trafikverket.se/ontologi/trvotl/5646d42d-fad5-42ed-ba95-398e33e8faa6>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/35eaf444-9a48-4753-8abd-4167bdcc98c3> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#hasPart>
+                         ] ;
+        skos:prefLabel   "Styrsystem i segmentsövergripande nivå" ;
+        <https://www.trafikverket.se/ontologi/trvotl/1de790d9810207e5931c3f3c94607c44>
+                "LCCD" .
+
+<https://www.trafikverket.se/ontologi/trvotl/aae51600-c5c3-45c5-ac46-2510fce63340-list-0>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/54bde270-073b-4fed-a0ba-56134a1ed083> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/aae51600-c5c3-45c5-ac46-2510fce63340-list-1> .
+
+<https://w3id.org/nen2660/def#RealObject>
+        rdf:type        owl:Class ;
+        skos:prefLabel  "fysiek object"@nl , "physical object"@en .
+
+<https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-0>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/25401143-a057-4ef1-8dc4-d5e6031e7eac> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-1> .
+
+<https://www.trafikverket.se/ontologi/trvotl/a3a43f28ed55f98a9e185958603111bd>
+        rdf:type        owl:AnnotationProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "Klassifikationskod" .
+
+<https://w3id.org/nen2660/def#hasPart>
+        rdf:type        owl:ObjectProperty ;
+        skos:prefLabel  "heeft onderdeel"@nl , "has part"@en .
+
+<https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-4>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/7c1f406b-ba1d-4a7a-b62a-1b07f96461b2> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-5> .
+
+<https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-8>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/c2809720-8a96-468c-8c89-b1bf74e0bbb6> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-9> .
+
+<https://w3id.org/nen2660/def#GeometricEntity>
+        rdf:type        owl:Class ;
+        skos:prefLabel  "geometrische entiteit"@nl , "Geometric entity"@en .
+
+<https://www.trafikverket.se/ontologi/trvotl/682ba86d-c1d3-4377-96ac-0deee4003ae3>
+        rdf:type        rdf:Property ;
+        skos:prefLabel  "Förvaltningsegenskaper" .
+
+<https://www.trafikverket.se/ontologi/trvotl/71d83e5a-db9b-4ef9-aeb9-74eb972fbc76>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://www.trafikverket.se/ontologi/trvotl/98b2b455-eca0-47d8-8f2c-18812a468b2b> ;
+        rdfs:subClassOf  [ rdf:type            owl:Restriction ;
+                           owl:minCardinality  0 ;
+                           owl:onProperty      <https://www.trafikverket.se/ontologi/trvotl/5646d42d-fad5-42ed-ba95-398e33e8faa6>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/35eaf444-9a48-4753-8abd-4167bdcc98c3> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#hasPart>
+                         ] ;
+        skos:prefLabel   "Redundant styrsystem i anläggningsövergripande nivå"@sv ;
+        <https://www.trafikverket.se/ontologi/trvotl/1de790d9810207e5931c3f3c94607c44>
+                "LCCB" .
+
+<https://www.trafikverket.se/ontologi/trvotl/ced1b738-8212-4e22-a185-2bb305fe94bb>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://www.trafikverket.se/ontologi/trvotl/7a5bd4e7-6466-4ba0-8334-3ea489b3c3d5> ;
+        rdfs:subClassOf  [ rdf:type            owl:Restriction ;
+                           owl:minCardinality  0 ;
+                           owl:onProperty      <https://www.trafikverket.se/ontologi/trvotl/6b6a5195-f43d-4e8b-afb0-ec200cefb556>
+                         ] ;
+        skos:altLabel    "RTU/PLC"@en , "control unit"@en ;
+        skos:prefLabel   "Styr- och regleringsenhet"@sv ;
+        <https://www.trafikverket.se/ontologi/trvotl/dabe5ddcf9aa7f6d099631cd5e479cf2>
+                "KEBAA" .
+
+<https://www.trafikverket.se/ontologi/trvotl/Risk>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://w3id.org/nen2660/def#Activity> ;
+        skos:prefLabel   "risico"@nl , "risk"@en .
+
+<https://www.trafikverket.se/ontologi/trvotl/a82321b2-99a5-4eae-bec8-65e600f3916f>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:range          rdfs:Resource ;
+        rdfs:subPropertyOf  <https://www.trafikverket.se/ontologi/trvotl/682ba86d-c1d3-4377-96ac-0deee4003ae3> ;
+        skos:definition     "Tillverkarens kompletta modellbetekning av produkten\n\nTillverkarens kompletta modellbeteckning av produkten samt tillägg som beskriver beteckning för pumphjul respektive pumpfot\n\nTillägg för uppfodringspump\nexempel på tillägg\n/245 /Flygt DN150/150 /5,9kW = pumphjul 245, Pumpfot Flygt DN150/150, Effekt pump 5,9kW"@sv ;
+        skos:prefLabel      "Modellbeteckning"@sv ;
+        <https://www.trafikverket.se/ontologi/trvotl/0a677b794a0152c61a4b798ff94e322d>
+                "1" ;
+        <https://www.trafikverket.se/ontologi/trvotl/38d227f738444ece53da5d3269e9636a>
+                "GUS" ;
+        <https://www.trafikverket.se/ontologi/trvotl/823df82d3e47debcf6ff0dfaab2561cc>
+                "3127, 160 1580290 /245 /Flygt DN150/150 /5,9kW\nTOP 150L\nWaterpilot FMX167-C2BVV1B7\nKulventil Typ AT 3611 DN :25\nBackventil Typ AT 1159, DN 25\nIPOW-2000-2500-0000\nPC211\nPW9130i100R-xl2U\nRaven XE" ;
+        <https://www.trafikverket.se/ontologi/trvotl/da32c885dc25a772bf69298eed07bc0b>
+                "Anläggningsregister, spårbarhet genom hela livscykel" .
+
+<https://www.trafikverket.se/ontologi/trvotl/Objective>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://w3id.org/nen2660/def#State> ;
+        skos:prefLabel   "objective"@en , "doel"@nl .
+
+<https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa>
+        rdf:type         owl:Class , sh:NodeShape ;
+        rdfs:subClassOf  <https://w3id.org/nen2660/def#EnumerationType> ;
+        owl:oneOf        <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-0> ;
+        skos:prefLabel   "ModellbeteckningSignal-RTU" ;
+        sh:in            <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-0> .
+
+<https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-3>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/6c739257-607f-42c6-b93b-1e318c5f7ad7> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-4> .
+
+<https://www.trafikverket.se/ontologi/trvotl/54bde270-073b-4fed-a0ba-56134a1ed083>
+        rdf:type         <https://www.trafikverket.se/ontologi/trvotl/aae51600-c5c3-45c5-ac46-2510fce63340> ;
+        skos:definition  "" ;
+        skos:prefLabel   "Siemens S7-300" .
+
+<https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-7>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/be12bbec-2833-44da-8264-d1e49b4a5774> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-8> .
+
+<https://www.trafikverket.se/ontologi/trvotl/23b58931-e1fa-48c5-8961-09194e4abf4b-Shape>
+        rdf:type        sh:NodeShape ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#contains> ;
+                          sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/0be5f30c-a84b-478c-891f-7bf10baa7dca> ]
+                        ] ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#contains> ;
+                          sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/2ecb3cff-ba00-47f4-9838-f90b761ddb1d> ]
+                        ] ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#contains> ;
+                          sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/b7a27fbe-dee4-4aaf-a030-7bb75148f84a> ]
+                        ] ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#contains> ;
+                          sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/7bf560ff-b1a7-44f7-8651-38c1f637ebf3> ]
+                        ] ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#contains> ;
+                          sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/71d83e5a-db9b-4ef9-aeb9-74eb972fbc76> ]
+                        ] ;
+        sh:targetClass  <https://www.trafikverket.se/ontologi/trvotl/23b58931-e1fa-48c5-8961-09194e4abf4b> .
+
+<https://www.trafikverket.se/ontologi/trvotl/20696ef6-3a3b-47e6-82a8-7746b1ca6d43>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://www.trafikverket.se/ontologi/trvotl/1da1ba7c-5a63-4957-9d09-4384c487a84d> ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/98a15fef-8547-4943-8161-0925335792d2> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#contains>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/d7ca36a8-cb1b-4cb3-9953-0cd4604d0cfc> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#contains>
+                         ] ;
+        skos:definition  "Utrymme för brokonstruktion"@sv ;
+        skos:prefLabel   "Bro"@sv ;
+        <https://www.trafikverket.se/ontologi/trvotl/a3a43f28ed55f98a9e185958603111bd>
+                "B" .
+
+<https://www.trafikverket.se/ontologi/trvotl/dcdffa85-5f0d-42f9-9fd7-32e5eb6fb272>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://w3id.org/nen2660/def#RealObject> ;
+        skos:prefLabel   "Tillgångssystem" .
+
+<https://www.trafikverket.se/ontologi/trvotl/Agent>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://w3id.org/nen2660/def#RealObject> ;
+        skos:prefLabel   "actor"@nl , "agent"@en .
+
+<https://www.trafikverket.se/ontologi/trvotl/ea378b8f-99ae-44b1-8e33-08343dc28db6>
+        rdf:type         <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637> , <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa> ;
+        skos:definition  "" ;
+        skos:prefLabel   "SICAM AK" .
+
+<https://www.trafikverket.se/ontologi/trvotl/3476da50-4398-31df-a65d-ac7b9d133dec>
+        rdf:type        sh:NodeShape ;
+        sh:property     [ sh:datatype  xsd:string ;
+                          sh:maxCount  1 ;
+                          sh:minCount  0 ;
+                          sh:path      <https://www.trafikverket.se/ontologi/trvotl/5646d42d-fad5-42ed-ba95-398e33e8faa6>
+                        ] ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#hasPart> ;
+                          sh:qualifiedMinCount    1 ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/d7ca36a8-cb1b-4cb3-9953-0cd4604d0cfc> ]
+                        ] ;
+        sh:targetClass  <https://www.trafikverket.se/ontologi/trvotl/98a15fef-8547-4943-8161-0925335792d2> .
+
+<https://www.trafikverket.se/ontologi/trvotl/2ecb3cff-ba00-47f4-9838-f90b761ddb1d>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://www.trafikverket.se/ontologi/trvotl/98b2b455-eca0-47d8-8f2c-18812a468b2b> ;
+        rdfs:subClassOf  [ rdf:type            owl:Restriction ;
+                           owl:minCardinality  0 ;
+                           owl:onProperty      <https://www.trafikverket.se/ontologi/trvotl/5646d42d-fad5-42ed-ba95-398e33e8faa6>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/6ca5d62c-552e-46a2-8dd7-26ee9db11414> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#hasPart>
+                         ] ;
+        skos:prefLabel   "Lokalt styrsystem PLC"@sv ;
+        <https://www.trafikverket.se/ontologi/trvotl/1de790d9810207e5931c3f3c94607c44>
+                "LCDB" .
+
+<https://www.trafikverket.se/ontologi/trvotl/>
+        rdf:type        owl:Ontology ;
+        rdfs:comment    "OTL Test med NEN" ;
+        dcterms:date    "2024-03-17447" ;
+        owl:imports     <https://w3id.org/nen2660/def#> ;
+        skos:prefLabel  "W3C Shapes Constraint Language (SHACL) Vocabulary"@en , "OTL_Test_nen" , "Laces: KOS (schema)" , "Laces: Document extractions (schema)" , "OTLmanager (schema)"@en , "Laces schemas"@en , "Laces: Specifications (schema)" .
+
+<https://www.trafikverket.se/ontologi/trvotl/436017d9-0c3b-300e-85ae-b8b0080d929c>
+        rdf:type        sh:NodeShape ;
+        sh:property     [ sh:datatype  xsd:string ;
+                          sh:maxCount  1 ;
+                          sh:minCount  0 ;
+                          sh:path      <https://www.trafikverket.se/ontologi/trvotl/6b6a5195-f43d-4e8b-afb0-ec200cefb556>
+                        ] ;
+        sh:property     [ sh:class     <https://www.trafikverket.se/ontologi/trvotl/aae51600-c5c3-45c5-ac46-2510fce63340> ;
+                          sh:maxCount  1 ;
+                          sh:minCount  0 ;
+                          sh:path      <https://www.trafikverket.se/ontologi/trvotl/a82321b2-99a5-4eae-bec8-65e600f3916f>
+                        ] ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#isConnectedTo> ;
+                          sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/f17c1bd2-851a-4519-8823-0dee9f86ea2b> ]
+                        ] ;
+        sh:targetClass  <https://www.trafikverket.se/ontologi/trvotl/6ca5d62c-552e-46a2-8dd7-26ee9db11414> .
+
+<https://w3id.org/nen2660/def#InformationObject>
+        rdf:type        owl:Class ;
+        skos:prefLabel  "information object"@en , "informatieobject"@nl .
+
+<https://www.trafikverket.se/ontologi/trvotl/dabe5ddcf9aa7f6d099631cd5e479cf2>
+        rdf:type        owl:AnnotationProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "Typkod" .
+
+<https://www.trafikverket.se/ontologi/trvotl/9e76f0a6-4748-32ee-b9cf-b43cc0bd5561>
+        rdf:type        sh:NodeShape ;
+        sh:property     [ sh:datatype  xsd:string ;
+                          sh:maxCount  1 ;
+                          sh:minCount  0 ;
+                          sh:path      <https://www.trafikverket.se/ontologi/trvotl/5646d42d-fad5-42ed-ba95-398e33e8faa6>
+                        ] ;
+        sh:targetClass  <https://www.trafikverket.se/ontologi/trvotl/98b2b455-eca0-47d8-8f2c-18812a468b2b> .
+
+<https://www.trafikverket.se/ontologi/trvotl/f17c1bd2-851a-4519-8823-0dee9f86ea2b>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://www.trafikverket.se/ontologi/trvotl/dcdffa85-5f0d-42f9-9fd7-32e5eb6fb272> ;
+        skos:prefLabel   "Överordnat styr- och övervakningssystem  för anläggning" .
+
+<https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-2>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/5422b2df-6664-4457-acdd-1e1a9bfe1ddd> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-3> .
+
+<https://www.trafikverket.se/ontologi/trvotl/be12bbec-2833-44da-8264-d1e49b4a5774>
+        rdf:type         <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637> , <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa> ;
+        skos:definition  "" ;
+        skos:prefLabel   "SICAM TM" .
+
+<https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-6>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/bbd40550-9f84-48dc-a9a8-135448bee618> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-7> .
+
+<https://www.trafikverket.se/ontologi/trvotl/ffa75235-294c-4548-9627-fda2c88bb635>
+        rdf:type         <https://www.trafikverket.se/ontologi/trvotl/aae51600-c5c3-45c5-ac46-2510fce63340> ;
+        skos:definition  "" ;
+        skos:prefLabel   "Mitsubishi MELSEC-Q" .
+
+<https://www.trafikverket.se/ontologi/trvotl/82f0afcc-e049-3cf0-b137-89356bce2241>
+        rdf:type        sh:NodeShape ;
+        sh:property     [ sh:datatype  xsd:string ;
+                          sh:maxCount  1 ;
+                          sh:minCount  0 ;
+                          sh:path      <https://www.trafikverket.se/ontologi/trvotl/6b6a5195-f43d-4e8b-afb0-ec200cefb556>
+                        ] ;
+        sh:targetClass  <https://www.trafikverket.se/ontologi/trvotl/7a5bd4e7-6466-4ba0-8334-3ea489b3c3d5> .
+
+<https://www.trafikverket.se/ontologi/trvotl/bbd40550-9f84-48dc-a9a8-135448bee618>
+        rdf:type         <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637> , <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa> ;
+        skos:definition  "" ;
+        skos:prefLabel   "SICAM A8000, CP-8000" .
+
+<https://www.trafikverket.se/ontologi/trvotl/37ea92ac-445c-4a90-9341-9f141be1b27f>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://www.trafikverket.se/ontologi/trvotl/1da1ba7c-5a63-4957-9d09-4384c487a84d> ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/2ecb3cff-ba00-47f4-9838-f90b761ddb1d> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#contains>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/0be5f30c-a84b-478c-891f-7bf10baa7dca> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#contains>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/7bf560ff-b1a7-44f7-8651-38c1f637ebf3> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#contains>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/71d83e5a-db9b-4ef9-aeb9-74eb972fbc76> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#contains>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/b7a27fbe-dee4-4aaf-a030-7bb75148f84a> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#contains>
+                         ] ;
+        skos:definition  "Utrymme för driftdepå, utrymme för flera tekniska system, teknikhus järnväg, utrymme för signalutrustning"@sv ;
+        skos:prefLabel   "Tekniskt flerfunktionsutrymme"@sv ;
+        <https://www.trafikverket.se/ontologi/trvotl/a3a43f28ed55f98a9e185958603111bd>
+                "J" .
+
+<https://www.trafikverket.se/ontologi/trvotl/7bf560ff-b1a7-44f7-8651-38c1f637ebf3>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://www.trafikverket.se/ontologi/trvotl/98b2b455-eca0-47d8-8f2c-18812a468b2b> ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/b7a27fbe-dee4-4aaf-a030-7bb75148f84a> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#hasPart>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/8c07a33e-053d-4121-ba48-ebca965d60c9> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#hasPart>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type            owl:Restriction ;
+                           owl:minCardinality  0 ;
+                           owl:onProperty      <https://www.trafikverket.se/ontologi/trvotl/5646d42d-fad5-42ed-ba95-398e33e8faa6>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/71d83e5a-db9b-4ef9-aeb9-74eb972fbc76> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#hasPart>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/2ecb3cff-ba00-47f4-9838-f90b761ddb1d> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#hasPart>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/0be5f30c-a84b-478c-891f-7bf10baa7dca> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#hasPart>
+                         ] ;
+        skos:altLabel    "SICAM RTU"@sv ;
+        skos:prefLabel   "Anläggningsövergripande styrsystem"@sv .
+
+<https://www.trafikverket.se/ontologi/trvotl/f4212189-3bec-3d84-a5e7-17b6acc73ac9>
+        rdf:type        sh:NodeShape ;
+        sh:property     [ sh:datatype  xsd:string ;
+                          sh:maxCount  1 ;
+                          sh:minCount  0 ;
+                          sh:path      <https://www.trafikverket.se/ontologi/trvotl/5646d42d-fad5-42ed-ba95-398e33e8faa6>
+                        ] ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#hasPart> ;
+                          sh:qualifiedMinCount    1 ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/6ca5d62c-552e-46a2-8dd7-26ee9db11414> ]
+                        ] ;
+        sh:targetClass  <https://www.trafikverket.se/ontologi/trvotl/2ecb3cff-ba00-47f4-9838-f90b761ddb1d> .
+
+<https://www.trafikverket.se/ontologi/trvotl/aae51600-c5c3-45c5-ac46-2510fce63340-list-1>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/e789de7f-2835-4414-9323-667f30c47189> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/aae51600-c5c3-45c5-ac46-2510fce63340-list-2> .
+
+<https://www.trafikverket.se/ontologi/trvotl/823df82d3e47debcf6ff0dfaab2561cc>
+        rdf:type        owl:AnnotationProperty ;
+        rdfs:range      xsd:string ;
+        skos:prefLabel  "Exempel" .
+
+<https://www.trafikverket.se/ontologi/trvotl/d3c9f7dc-cf01-3317-9575-58185d1619da>
+        rdf:type        sh:NodeShape ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#hasPart> ;
+                          sh:qualifiedMinCount    1 ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/35eaf444-9a48-4753-8abd-4167bdcc98c3> ]
+                        ] ;
+        sh:property     [ sh:datatype  xsd:string ;
+                          sh:maxCount  1 ;
+                          sh:minCount  0 ;
+                          sh:path      <https://www.trafikverket.se/ontologi/trvotl/5646d42d-fad5-42ed-ba95-398e33e8faa6>
+                        ] ;
+        sh:targetClass  <https://www.trafikverket.se/ontologi/trvotl/71d83e5a-db9b-4ef9-aeb9-74eb972fbc76> .
+
+<https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-1>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/28fd702e-6bde-4577-a63c-1ec0a550f2e5> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-2> .
+
+<https://www.trafikverket.se/ontologi/trvotl/e789de7f-2835-4414-9323-667f30c47189>
+        rdf:type         <https://www.trafikverket.se/ontologi/trvotl/aae51600-c5c3-45c5-ac46-2510fce63340> ;
+        skos:definition  "" ;
+        skos:prefLabel   "ABB PCU400" .
+
+<https://w3id.org/nen2660/def#EnumerationType>
+        rdf:type        owl:Class ;
+        skos:prefLabel  "enumeration type"@en , "enumeratietype"@nl .
+
+<https://www.trafikverket.se/ontologi/trvotl/7c1f406b-ba1d-4a7a-b62a-1b07f96461b2>
+        rdf:type         <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637> , <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa> ;
+        skos:definition  "" ;
+        skos:prefLabel   "RTU560" .
+
+<https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-5>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/7dc5128a-f0cf-40f7-a7e1-5ec5738c8adf> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-6> .
+
+<https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637-list-9>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/ea378b8f-99ae-44b1-8e33-08343dc28db6> ;
+        rdf:rest   () .
+
+<https://www.trafikverket.se/ontologi/trvotl/Document>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://w3id.org/nen2660/def#InformationObject> ;
+        skos:prefLabel   "document"@en , "document"@nl .
+
+<https://www.trafikverket.se/ontologi/trvotl/20696ef6-3a3b-47e6-82a8-7746b1ca6d43-Shape>
+        rdf:type        sh:NodeShape ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#contains> ;
+                          sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/98a15fef-8547-4943-8161-0925335792d2> ]
+                        ] ;
+        sh:property     [ sh:path                 <https://w3id.org/nen2660/def#contains> ;
+                          sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+                          sh:qualifiedValueShape  [ sh:class  <https://www.trafikverket.se/ontologi/trvotl/d7ca36a8-cb1b-4cb3-9953-0cd4604d0cfc> ]
+                        ] ;
+        sh:targetClass  <https://www.trafikverket.se/ontologi/trvotl/20696ef6-3a3b-47e6-82a8-7746b1ca6d43> .
+
+<https://www.trafikverket.se/ontologi/trvotl/1da1ba7c-5a63-4957-9d09-4384c487a84d>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://www.trafikverket.se/ontologi/trvotl/12da6079-2bda-475a-922d-8cebc908cdd4> ;
+        skos:prefLabel   "Anläggningsdel"@sv .
+
+<https://www.trafikverket.se/ontologi/trvotl/5646d42d-fad5-42ed-ba95-398e33e8faa6>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:range          rdfs:Resource ;
+        rdfs:subPropertyOf  <https://www.trafikverket.se/ontologi/trvotl/682ba86d-c1d3-4377-96ac-0deee4003ae3> ;
+        skos:definition     "Tekniskt system ID"@sv ;
+        skos:prefLabel      "SystemID" ;
+        <https://www.trafikverket.se/ontologi/trvotl/0a677b794a0152c61a4b798ff94e322d>
+                "1" ;
+        <https://www.trafikverket.se/ontologi/trvotl/38d227f738444ece53da5d3269e9636a>
+                "GUS" ;
+        <https://www.trafikverket.se/ontologi/trvotl/a4eaf0890d79a8f238e10a003d0035e6>
+                "Informationsförvaltning" ;
+        <https://www.trafikverket.se/ontologi/trvotl/da32c885dc25a772bf69298eed07bc0b>
+                "Spårbarhet" .
+
+<https://www.trafikverket.se/ontologi/trvotl/28fd702e-6bde-4577-a63c-1ec0a550f2e5>
+        rdf:type         <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637> , <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa> ;
+        skos:definition  "" ;
+        skos:prefLabel   "SICAM A8000, CP-8031" .
+
+<https://www.trafikverket.se/ontologi/trvotl/7dc5128a-f0cf-40f7-a7e1-5ec5738c8adf>
+        rdf:type         <https://www.trafikverket.se/ontologi/trvotl/da4d3269-7e41-4f75-bebc-1a906f11c637> , <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa> ;
+        skos:definition  "" ;
+        skos:prefLabel   "SICAM A8000, CP-8021" .
+
+<https://www.trafikverket.se/ontologi/trvotl/fe8ae431-688f-36fd-8dd4-e59855abd4d9>
+        rdf:type        sh:NodeShape ;
+        sh:property     [ sh:datatype  xsd:string ;
+                          sh:maxCount  1 ;
+                          sh:minCount  0 ;
+                          sh:path      <https://www.trafikverket.se/ontologi/trvotl/6b6a5195-f43d-4e8b-afb0-ec200cefb556>
+                        ] ;
+        sh:targetClass  <https://www.trafikverket.se/ontologi/trvotl/ced1b738-8212-4e22-a185-2bb305fe94bb> .
+
+<https://www.trafikverket.se/ontologi/trvotl/98a15fef-8547-4943-8161-0925335792d2>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <https://www.trafikverket.se/ontologi/trvotl/98b2b455-eca0-47d8-8f2c-18812a468b2b> ;
+        rdfs:subClassOf  [ rdf:type            owl:Restriction ;
+                           owl:minCardinality  0 ;
+                           owl:onProperty      <https://www.trafikverket.se/ontologi/trvotl/5646d42d-fad5-42ed-ba95-398e33e8faa6>
+                         ] ;
+        rdfs:subClassOf  [ rdf:type                     owl:Restriction ;
+                           owl:minQualifiedCardinality  "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  <https://www.trafikverket.se/ontologi/trvotl/d7ca36a8-cb1b-4cb3-9953-0cd4604d0cfc> ;
+                           owl:onProperty               <https://w3id.org/nen2660/def#hasPart>
+                         ] ;
+        skos:prefLabel   "Brokonstruktion" .
+
+<https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-0>
+        rdf:type   rdf:List ;
+        rdf:first  <https://www.trafikverket.se/ontologi/trvotl/25401143-a057-4ef1-8dc4-d5e6031e7eac> ;
+        rdf:rest   <https://www.trafikverket.se/ontologi/trvotl/60194600-c939-4178-95aa-e94d572f88fa-list-1> .
