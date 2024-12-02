@@ -1,0 +1,387 @@
+@prefix : <https://data.trafikverket.se/onto/otb/def#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sml: <https://w3id.org/sml/def#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix trvotb: <https://data.trafikverket.se/onto/otb/def#> .
+@base <https://data.trafikverket.se/onto/otb/def#> .
+
+<https://data.trafikverket.se/onto/otb/def> rdf:type owl:Ontology ;
+                                             owl:imports <https://w3id.org/sml/owl/def> ;
+                                             rdfs:isDefinedBy "Karrar Ibrahim" ;
+                                             rdfs:label "Trafikverkets Objekttypsbibliotek"@sv ;
+                                             owl:versionInfo 0.1 .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  https://data.trafikverket.se/onto/otb/def#AttributeName
+trvotb:AttributeName rdf:type owl:AnnotationProperty ;
+                     skos:definition "namnet eller identifieraren för egenskapen eller attributet, som används för att unikt referera till det i system och dokumentation."@sv ,
+                                     "the name or identifier of the property or attribute, used to uniquely reference it in systems and documentation."@en ;
+                     skos:prefLabel "Attribute Name"@en ;
+                     rdfs:subPropertyOf trvotb:PropertyMetadata ;
+                     rdfs:range xsd:string .
+
+
+###  https://data.trafikverket.se/onto/otb/def#DeliveryResponsible
+trvotb:DeliveryResponsible rdf:type owl:AnnotationProperty ;
+                           skos:definition "den individ, roll eller organisation som är ansvarig för att tillhandahålla eller säkerställa egenskapens tillgänglighet."@sv ,
+                                           "the individual, role, or organization responsible for providing or ensuring the availability of the property."@en ;
+                           skos:prefLabel "Delivery Responsible"@en ;
+                           rdfs:subPropertyOf trvotb:PropertyMetadata .
+
+
+###  https://data.trafikverket.se/onto/otb/def#Example
+trvotb:Example rdf:type owl:AnnotationProperty ;
+               skos:definition "an illustrative value or instance that demonstrates the application or usage of the property."@en ,
+                               "ett illustrativt värde eller exempel som visar tillämpningen eller användningen av egenskapen."@sv ;
+               rdfs:subPropertyOf trvotb:PropertyMetadata ;
+               rdfs:range xsd:string .
+
+
+###  https://data.trafikverket.se/onto/otb/def#LifecyclePhase
+trvotb:LifecyclePhase rdf:type owl:AnnotationProperty ;
+                      skos:definition "den specifika fasen i livscykeln (t.ex. planering, produktion, drift) där egenskapen är relevant eller tillämplig."@en ;
+                      skos:prefLabel "Lifecycle Phase"@en ,
+                                     "the specific stage of the lifecycle (e.g., planning, production, operation) during which the property is relevant or applicable."@en ;
+                      rdfs:subPropertyOf trvotb:PropertyMetadata .
+
+
+###  https://data.trafikverket.se/onto/otb/def#ManagementSystem
+trvotb:ManagementSystem rdf:type owl:AnnotationProperty ;
+                        skos:definition "systemet eller metoden som används för att styra och hantera egenskapen eller dess data."@sv ,
+                                        "the system or methodology used to govern and manage the property or its data."@en ;
+                        skos:prefLabel "Management System (Method)"@en ;
+                        rdfs:subPropertyOf trvotb:PropertyMetadata ;
+                        rdfs:range xsd:string .
+
+
+###  https://data.trafikverket.se/onto/otb/def#Mandatory
+trvotb:Mandatory rdf:type owl:AnnotationProperty ;
+                 skos:definition "a designation indicating whether the property is required or optional within the defined context."@en ,
+                                 "en markering som anger om egenskapen är obligatorisk eller valfri inom det definierade sammanhanget."@sv ;
+                 skos:prefLabel "Mandatory"@en ;
+                 rdfs:subPropertyOf trvotb:PropertyMetadata ;
+                 rdfs:range xsd:boolean .
+
+
+###  https://data.trafikverket.se/onto/otb/def#PropertyMetadata
+trvotb:PropertyMetadata rdf:type owl:AnnotationProperty ;
+                        skos:definition "property metadata representerar strukturerad information som beskriver egenskaper hos en specifik egenskap eller attribut. Detta inkluderar detaljer som syfte, krav, livscykelrelevans och andra aspekter som möjliggör effektiv hantering, spårning och användning av egenskapen i ett system eller en applikation."@sv ,
+                                        "property metadata represents structured information that describes the characteristics of a specific property or attribute. This includes details such as purpose, requirements, lifecycle relevance, and other aspects that enable effective management, tracking, and utilization of the property within a system or application."@en ;
+                        skos:prefLabel "Property Metadata"@en .
+
+
+###  https://data.trafikverket.se/onto/otb/def#PropertySet
+trvotb:PropertySet rdf:type owl:AnnotationProperty ;
+                   skos:definition "a collection or grouping of related properties or attributes associated with a specific context or purpose."@en ,
+                                   "en samling eller gruppering av relaterade egenskaper eller attribut kopplade till ett specifikt sammanhang eller syfte."@sv ;
+                   skos:prefLabel "Property Set"@en ;
+                   rdfs:subPropertyOf trvotb:PropertyMetadata ;
+                   rdfs:range xsd:string .
+
+
+###  https://data.trafikverket.se/onto/otb/def#PurposeOfProperty
+trvotb:PurposeOfProperty rdf:type owl:AnnotationProperty ;
+                         skos:definition "den avsedda funktionen eller anledningen till att egenskapen existerar inom systemet eller applikationen."@sv ,
+                                         "the intended function or reason for the existence of the property within the system or application."@en ;
+                         skos:prefLabel "Purpose of property"@en ;
+                         rdfs:subPropertyOf trvotb:PropertyMetadata .
+
+
+###  https://data.trafikverket.se/onto/otb/def#SecurityClassification
+trvotb:SecurityClassification rdf:type owl:AnnotationProperty ;
+                              skos:definition "den säkerhetsnivå eller sekretessklassificering som tilldelas egenskapen baserat på dess känslighet eller kritikalitet."@sv ,
+                                              "the level of security or confidentiality assigned to the property based on its sensitivity or criticality."@en ;
+                              skos:prefLabel "Security Classification (SEC)"@en ;
+                              rdfs:subPropertyOf trvotb:PropertyMetadata .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://data.trafikverket.se/onto/otb/def#belongsTo
+trvotb:belongsTo rdf:type owl:ObjectProperty ,
+                          owl:TransitiveProperty ;
+                 skos:altLabel "belongs to"@en ;
+                 skos:definition "A transitive object property that represents an association where an entity is a component, part, or subordinate of a larger structure, system, or grouping. This relationship is often used to define ownership, inclusion, or hierarchical organization between two concepts."@en ;
+                 skos:prefLabel "Tillhör"@sv .
+
+
+###  https://data.trafikverket.se/onto/otb/def#isFulfilledBy
+trvotb:isFulfilledBy rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf sml:hasSolution ;
+                     rdfs:domain trvotb:PrimaryFunction ;
+                     rdfs:range trvotb:Component ;
+                     skos:altLabel "is fulfilled by"@en ;
+                     skos:definition "A functional or operational relationship where a requirement, purpose, or functionality of one entity is satisfied, achieved, or carried out by another entity. This relationship is often used to link high-level goals or functions to their corresponding implementations or solutions."@en ,
+                                     "En funktionell eller operativ relation där ett krav, syfte eller funktionalitet hos en entitet uppfylls, genomförs eller realiseras av en annan entitet. Denna relation används ofta för att länka övergripande mål eller funktioner till deras motsvarande implementeringar eller lösningar."@sv ;
+                     skos:prefLabel "uppfylls av"@sv .
+
+
+###  https://data.trafikverket.se/onto/otb/def#isFunctionalSegmentationOf
+trvotb:isFunctionalSegmentationOf rdf:type owl:ObjectProperty ;
+                                  skos:altLabel "is functional segmentation of"@en ;
+                                  skos:definition "A hierarchical or logical relationship where an entity is a functional subset or segment of a larger entity, primarily organized to fulfill a specific purpose or function. This segmentation indicates a breakdown of functionality within the larger system"@en ,
+                                                  "En hierarkisk eller logisk relation där en entitet är ett funktionellt segment av en större entitet, främst organiserad för att uppfylla ett specifikt syfte eller funktion. Denna segmentering visar på en uppdelning av funktionalitet inom det större systemet."@sv ;
+                                  skos:prefLabel "är en funktionell indelning av"@sv .
+
+
+###  https://data.trafikverket.se/onto/otb/def#isIncludedIn
+trvotb:isIncludedIn rdf:type owl:ObjectProperty ;
+                    skos:definition "A spatial, logical, or hierarchical relationship where an entity is fully contained within another entity, either physically, conceptually, or structurally. This relationship signifies that the smaller entity is a part of, or is assigned to, the larger entity."@en ,
+                                    "En spatial, logisk eller hierarkisk relation där en entitet är helt inkluderad i en annan entitet, antingen fysiskt, konceptuellt eller strukturellt. Denna relation indikerar att den mindre entiteten är en del av eller tilldelad till den större entiteten."@sv ;
+                    skos:prefLabel "ingår i"@sv ,
+                                   "is Included In"@en .
+
+
+###  https://data.trafikverket.se/onto/otb/def#isMainlyLocatedIn
+trvotb:isMainlyLocatedIn rdf:type owl:ObjectProperty ;
+                         skos:altLabel "is mainly located in"@en ;
+                         skos:definition "A spatial relationship indicating that an entity is primarily situated or assigned to a specific location or area. This relationship emphasizes the primary placement or association of an entity, even if it may have secondary or alternative associations elsewhere."@en ,
+                                         "En spatial relation som indikerar att en entitet huvudsakligen är placerad eller tilldelad en specifik plats eller område. Denna relation betonar den primära placeringen eller kopplingen för en entitet, även om den kan ha sekundära eller alternativa kopplingar på andra ställen."@sv ;
+                         skos:prefLabel "huvudsakligen placerad inom"@sv .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://data.trafikverket.se/onto/otb/def#Description
+trvotb:Description rdf:type owl:DatatypeProperty ;
+                   skos:prefLabel "Beskrivning"@sv .
+
+
+###  https://data.trafikverket.se/onto/otb/def#FacilityInformation
+trvotb:FacilityInformation rdf:type owl:DatatypeProperty ;
+                           owl:propertyDisjointWith trvotb:ProjectInformation ;
+                           skos:altLabel "facility information"@en ;
+                           skos:definition "a property that represents an overarching grouping of information related to a facility. FacilityInformation includes data describing both realized facilities and planned facilities, enabling a clear distinction between physically existing structures and conceptually designed systems."@en ,
+                                           "en egenskap som representerar en övergripande gruppering av information relaterad till en anläggning. Anläggningsinformation omfattar data som beskriver både realiserade anläggningar och planerade anläggningar, vilket möjliggör en tydlig åtskillnad mellan fysiskt existerande strukturer och konceptuellt utformade system."@sv ;
+                           skos:prefLabel "Anläggningsinformation"@sv .
+
+
+###  https://data.trafikverket.se/onto/otb/def#Note
+trvotb:Note rdf:type owl:DatatypeProperty ;
+            skos:altLabel "note"@en ;
+            skos:prefLabel "Kommentar"@sv .
+
+
+###  https://data.trafikverket.se/onto/otb/def#PlannedFacilityInformation
+trvotb:PlannedFacilityInformation rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf trvotb:FacilityInformation ;
+                                  rdfs:domain trvotb:AssetLocation ,
+                                              trvotb:AssetSystem ,
+                                              trvotb:Component ,
+                                              trvotb:PrimaryFunction ,
+                                              trvotb:TechnicalSystem ;
+                                  owl:propertyDisjointWith trvotb:RealizedFacilityInformation ;
+                                  skos:altLabel "planned facility information"@en ;
+                                  skos:definition "information about a planned facility, an entity that does not yet exist in physical reality but exists in mental or conceptual reality. This information describes intentions, design, and specifications for future constructions."@en ,
+                                                  "information om en planerad anläggning, en entitet som ännu inte existerar i den fysiska verkligheten, men som existerar i mental eller konceptuell verklighet. Denna information beskriver intentioner, design, och specifikationer för framtida konstruktioner."@sv ;
+                                  skos:prefLabel "Utformadanläggningsinformation"@sv .
+
+
+###  https://data.trafikverket.se/onto/otb/def#ProjectInformation
+trvotb:ProjectInformation rdf:type owl:DatatypeProperty ;
+                          rdfs:domain trvotb:AssetLocation ,
+                                      trvotb:AssetSystem ,
+                                      trvotb:Component ,
+                                      trvotb:PrimaryFunction ,
+                                      trvotb:TechnicalSystem ;
+                          skos:altLabel "project information"@en ;
+                          skos:definition "project information represents data associated with a facility during its development and production phases. This information is temporarily relevant and focuses on planning, execution, resource allocation, and documentation of activities leading to the facility's realization."@en ,
+                                          "projektinformation representerar information som är kopplad till en anläggning under dess utvecklings- och produktionsfaser. Denna information är temporärt relevant och fokuserar på planering, genomförande, resursfördelning och dokumentation av aktiviteter som leder fram till anläggningens realisering."@sv ;
+                          skos:prefLabel "Projektinformation"@sv .
+
+
+###  https://data.trafikverket.se/onto/otb/def#RealizedFacilityInformation
+trvotb:RealizedFacilityInformation rdf:type owl:DatatypeProperty ;
+                                   rdfs:subPropertyOf trvotb:FacilityInformation ;
+                                   rdfs:domain trvotb:Component ,
+                                               trvotb:TechnicalSystem ;
+                                   skos:altLabel "realized facility information"@sv ;
+                                   skos:definition "information om en realiserad anläggning, en entitet som existerar eller har existerat i den fysiska verkligheten. Denna information fokuserar på materialisering, drift, och egenskaper hos den färdiga eller befintliga anläggningen."@sv ;
+                                   skos:prefLabel "Byggdanläggningsinformation"@sv ,
+                                                  "information about a realized facility, an entity that exists or has existed in physical reality. This information focuses on the materialization, operation, and attributes of the completed or existing facility."@en .
+
+
+###  https://data.trafikverket.se/onto/otb/def#SystemCode
+trvotb:SystemCode rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf trvotb:identifier ;
+                  rdfs:domain trvotb:AssetSystem ,
+                              trvotb:TechnicalSystem ;
+                  skos:definition "an alphanumeric code or identifier used to uniquely define and distinguish object types within the categories of technical systems and asset systems in an object type library. The system code ensures uniqueness and serves as a reference to describe the system’s function, structure, and role within a broader context."@en ,
+                                  "en unik alfanumerisk kod eller identifierare som används för att definiera och särskilja objekttyper inom kategorierna tekniska system och tillgångssystem i ett objekttypsbibliotek. Systemkoden säkerställer entydighet och fungerar som en referens för att beskriva systemets funktion, struktur och roll i ett större sammanhang."@sv ;
+                  skos:prefLabel "Systemkod"@sv ,
+                                 "system code"@en .
+
+
+###  https://data.trafikverket.se/onto/otb/def#TypeCode
+trvotb:TypeCode rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf trvotb:identifier ;
+                rdfs:domain trvotb:Component ;
+                rdfs:range xsd:string ;
+                skos:altLabel "type code"@en ;
+                skos:definition "an alphanumeric code or identifier used to uniquely define and classify object types within an object type library. The type code serves as a reference that describes the category, characteristics, and role of the object within the system, ensuring clarity and consistency in documentation and management."@en ,
+                                "en alfanumerisk kod eller identifierare som används för att unikt definiera och klassificera objekttyper inom ett objekttypsbibliotek. Typkoden fungerar som en referens som beskriver objektets kategori, egenskaper och roll i systemet, och säkerställer entydighet i dokumentation och hantering."@sv ;
+                skos:prefLabel "Typkod"@sv .
+
+
+###  https://data.trafikverket.se/onto/otb/def#identifier
+trvotb:identifier rdf:type owl:DatatypeProperty ;
+                  rdfs:range xsd:string ;
+                  skos:altLabel "identifier"@en ;
+                  skos:definition "a unique alphanumeric identifier for object types."@en ,
+                                  "en unik alfanumerisk identifierare för objekttyper"@sv ;
+                  skos:prefLabel "Identifierare"@sv .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://data.trafikverket.se/onto/otb/def#AssetComplex
+trvotb:AssetComplex rdf:type owl:Class ;
+                    rdfs:subClassOf sml:Entity ;
+                    skos:altLabel "Asset Complex"@en ;
+                    skos:definition "gruppering av Trafikverkets olika typer av tillgångar som utgör anläggningen"@sv ;
+                    skos:prefLabel "Tillgångskomplex"@sv .
+
+
+###  https://data.trafikverket.se/onto/otb/def#AssetLocation
+trvotb:AssetLocation rdf:type owl:Class ;
+                     rdfs:subClassOf sml:SpatialRegion ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty sml:hasPart ;
+                                       owl:allValuesFrom trvotb:AssetLocation
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty trvotb:belongsTo ;
+                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass trvotb:EconomicSegmentationOfAssets
+                                     ] ;
+                     skos:altLabel "Asset Location"@en ;
+                     skos:definition "anger tillgångarnas lokalisering inom ett uppföljningsområde och utgör Trafikverkets hierarkiska referenssystem för anläggningstillgångar."@sv ;
+                     skos:prefLabel "Tillgångsplacering"@sv .
+
+
+###  https://data.trafikverket.se/onto/otb/def#AssetSystem
+trvotb:AssetSystem rdf:type owl:Class ;
+                   rdfs:subClassOf sml:FunctionalEntity ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty trvotb:isFunctionalSegmentationOf ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass trvotb:AssetLocation
+                                   ] ;
+                   skos:altLabel "Asset System"@en ;
+                   skos:definition "uppsättning tillgångar som samspelar eller är besläktade [ISO 55000]"@sv ;
+                   skos:prefLabel "Tillgångssystem"@sv .
+
+
+###  https://data.trafikverket.se/onto/otb/def#Component
+trvotb:Component rdf:type owl:Class ;
+                 rdfs:subClassOf sml:PhysicalObject ,
+                                 sml:TechnicalEntity ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty trvotb:isIncludedIn ;
+                                   owl:allValuesFrom trvotb:TechnicalSystem
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sml:hasPart ;
+                                   owl:allValuesFrom trvotb:Component
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty sml:isRealizedBy ;
+                                   owl:allValuesFrom [ rdf:type owl:Class ;
+                                                       owl:unionOf ( trvotb:Construction
+                                                                     trvotb:Product
+                                                                   )
+                                                     ]
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty trvotb:belongsTo ;
+                                   owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass trvotb:AssetSystem
+                                 ] ;
+                 skos:altLabel "Component"@en ;
+                 skos:definition "tekniskt utformad funktion för en viss placering i anläggningen"@sv ;
+                 skos:prefLabel "Komponent"@sv .
+
+
+###  https://data.trafikverket.se/onto/otb/def#Construction
+trvotb:Construction rdf:type owl:Class ;
+                    rdfs:subClassOf sml:RealizedEntity ;
+                    skos:altLabel "construction"@en ;
+                    skos:definition "a built structure composed of assembled elements and materials, designed to support specific functions within an industrial or commercial operation. The construction forms an integral part of the physical infrastructure and is intended for long-term use."@en ,
+                                    "en byggd struktur som består av sammanfogade element och material, utformad för att stödja specifika funktioner inom en industriell eller kommersiell verksamhet. Konstruktionen utgör en integrerad del av den fysiska infrastrukturen och är avsedd för långsiktig användning."@sv ;
+                    skos:prefLabel "Konstruktion"@sv .
+
+
+###  https://data.trafikverket.se/onto/otb/def#County
+trvotb:County rdf:type owl:Class ;
+              rdfs:subClassOf trvotb:EconomicSegmentationOfAssets ;
+              skos:altLabel "County"@en ,
+                            "är en administrativ indelning av Sverige"@sv ;
+              skos:prefLabel "Län"@sv .
+
+
+###  https://data.trafikverket.se/onto/otb/def#EconomicSegmentationOfAssets
+trvotb:EconomicSegmentationOfAssets rdf:type owl:Class ;
+                                    rdfs:subClassOf sml:Entity ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty trvotb:belongsTo ;
+                                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onClass trvotb:AssetComplex
+                                                    ] ;
+                                    skos:altLabel "Economic Segmentation of Assets"@en ;
+                                    skos:definition "uppföljningsområde inom ett tillgångskomplex"@sv ;
+                                    skos:prefLabel "Ekonomisk indelning av tillgångar"@sv .
+
+
+###  https://data.trafikverket.se/onto/otb/def#PrimaryFunction
+trvotb:PrimaryFunction rdf:type owl:Class ;
+                       rdfs:subClassOf sml:FunctionalEntity ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty trvotb:isFulfilledBy ;
+                                         owl:allValuesFrom trvotb:Component
+                                       ] ;
+                       skos:definition "typ av krävd funktion med spårbarhetsbehov i Trafikverkets anläggning på en nivå som är relevant för att beskriva om infrastrukturen är tillgänglig ur ett nyttjande perspektiv"@sv ;
+                       skos:prefLabel "Grundfunktion"@sv .
+
+
+###  https://data.trafikverket.se/onto/otb/def#Product
+trvotb:Product rdf:type owl:Class ;
+               rdfs:subClassOf sml:RealizedEntity ;
+               skos:altLabel "product"@en ;
+               skos:definition "a physical unit or assembly of components that constitutes a part of a facility and contributes to its overall functionality. This product is intended for use within the facility's operational processes and plays a lasting role in its operation."@en ,
+                               "en fysisk enhet eller sammansättning av komponenter som utgör en del av en anläggning och bidrar till dess övergripande funktionalitet. Denna produkt är avsedd att användas inom anläggningens operativa processer och har en bestående roll i dess drift."@sv ;
+               skos:prefLabel "Produkt"@sv .
+
+
+###  https://data.trafikverket.se/onto/otb/def#RailwaySection
+trvotb:RailwaySection rdf:type owl:Class ;
+                      rdfs:subClassOf trvotb:EconomicSegmentationOfAssets ;
+                      skos:prefLabel "Bandel"@sv ,
+                                     "Railway section"@en .
+
+
+###  https://data.trafikverket.se/onto/otb/def#TechnicalSystem
+trvotb:TechnicalSystem rdf:type owl:Class ;
+                       rdfs:subClassOf sml:TechnicalEntity ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty trvotb:isMainlyLocatedIn ;
+                                         owl:allValuesFrom trvotb:AssetLocation
+                                       ] ;
+                       skos:altLabel "Technical System"@en ;
+                       skos:definition "gruppering av komponenter som tekniskt samverkar för att uppfylla en funktion"@sv ;
+                       skos:prefLabel "Tekniskt system"@sv .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
